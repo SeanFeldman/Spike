@@ -36,7 +36,7 @@ build:
 #---------------------------------#
 
 after_build:
-  7z a myapp.zip %APPVEYOR_BUILD_FOLDER%\bin\$(configuration)\*.*
+  7z a myapp.zip %APPVEYOR_BUILD_FOLDER%\bin\Release\*.*
 
 #---------------------------------#
 #      artifacts configuration    #
