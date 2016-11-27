@@ -32,12 +32,18 @@ build:
   verbosity: normal # quiet|minimal|normal|detailed
 
 #---------------------------------#
+#      after build - create zip   #
+#---------------------------------#
+
+after_build:
+  7z a myapp.zip %APPVEYOR_BUILD_FOLDER%\bin\$(configuration)\*.*
+
+#---------------------------------#
 #      artifacts configuration    #
 #---------------------------------#
 
 artifacts:
-  # pushing a single file with environment variable in path and "Deployment name" specified
-  - path: bin\$(configuration)\*.*
+  - path:  myapp.zip  # bin\$(configuration)\*.*
     name: myapp
 
 #---------------------------------#
